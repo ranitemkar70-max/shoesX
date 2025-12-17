@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoeX - Premium Sneakers</title>
+    <link href="shop.html" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #000, #444);
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #ff6b6b;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 60px;
+            background: white;
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .hero-text button {
+            padding: 15px 35px;
+            background: #ff6b6b;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+
+        .hero-text button:hover {
+            background: #e25555;
+        }
+
+        .hero img {
+            width: 420px;
+        }
+
+        .products {
+            padding: 60px;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+        }
+
+        .product img {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .product button {
+            background: black;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+        }
+
+        @media(max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                max-width: 100%;
+            }
+
+            .hero img {
+                margin-top: 40px;
+                width: 300px;
+            }
+        }
+        /* HERO TEXT ANIMATION */
+.hero-text h2 {
+    animation: slideIn 1s ease forwards;
+}
+
+.hero-text p {
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.hero-text button {
+    animation: bounce 2s infinite;
+}
+
+/* HERO IMAGE FLOAT */
+.hero img {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* PRODUCT CARD ANIMATION */
+.product {
+    animation: fadeUp 1s ease forwards;
+}
+
+/* IMAGE HOVER ZOOM */
+.product img {
+    transition: transform 0.5s ease;
+}
+
+.product:hover img {
+    transform: scale(1.1);
+}
+
+/* KEYFRAMES */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+.price {
+    text-decoration: line-through;
+    color: #777;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.discount-price {
+    color: #ff6b6b;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ShoeX</h1>
+    <nav>
+        <nav>
+    <a href="shoes.html">Home</a>
+    <a href="shop.html">Shop</a> <!-- Links to shop page -->
+    <a href="shop.html#men">Men</a> <!-- Scrolls to men section in shop.html -->
+    <a href="shop.html#women">Women</a> <!-- Scrolls to women section in shop.html -->
+    <a href="#contact">Contact</a> <!-- Scrolls to contact section on main page -->
+</nav>
+
+
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h2>Step Into Style</h2>
+        <p>Premium sneakers designed for comfort, performance, and everyday fashion.</p>
+        <button>Shop Now</button>
+    </div>
+   <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Shoes">
+</section>
+
+<section class="products">
+    <h2>Featured Shoes</h2>
+    <div class="product-grid">
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77">
+            <h3>Air Runner</h3>
+            <p class="price">₹5000</p> <!-- original price shown -->
+    <p class="discount-price">₹4500</p> <!-- discounted price -->
+            <button>Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
+            <h3>Street Pro</h3>
+             <p class="price">₹4500</p> <!-- original price shown -->
+    <p class="discount-price">₹3200</p> <!-- discounted price -->
+            <button>Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&fit=crop" alt="Urban Flex Shoes">
+            <h3>Urban Flex</h3>
+              <p class="price">₹7000</p> <!-- original price shown -->
+    <p class="discount-price">₹6000</p> <!-- discounted price -->
+            <button>Buy Now</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 ShoeX. All Rights Reserved.</p>
+</footer>
+<section class="products" id="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const modal = document.getElementById("optionModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const sizeSelect = document.getElementById("sizeSelect");
+    const colorSelect = document.getElementById("colorSelect");
+    const addToCartBtn = document.getElementById("addToCartBtn");
+    const cartItems = document.getElementById("cart-items");
+
+    let selectedProduct = null;
+
+    document.querySelectorAll(".product button").forEach(button => {
+        button.addEventListener("click", function () {
+            selectedProduct = button.closest(".product");
+            modalTitle.innerText = selectedProduct.querySelector("h3").innerText;
+            modal.style.display = "flex";
+        });
+    });
+
+    addToCartBtn.addEventListener("click", function () {
+        if (!sizeSelect.value || !colorSelect.value) {
+            alert("Please select size and color");
+            return;
+        }
+
+        const name = modalTitle.innerText;
+        const price = selectedProduct.querySelector("p").innerText;
+        const imgSrc = selectedProduct.querySelector("img").src;
+
+        const cartItem = document.createElement("div");
+        cartItem.style.display = "flex";
+        cartItem.style.alignItems = "center";
+        cartItem.style.gap = "15px";
+        cartItem.style.marginBottom = "15px";
+        cartItem.style.background = "white";
+        cartItem.style.padding = "15px";
+        cartItem.style.borderRadius = "10px";
+
+        cartItem.innerHTML = `
+            <img src="${imgSrc}" width="70">
+            <div>
+                <h4>${name}</h4>
+                <p>${price}</p>
+                <p>Size: ${sizeSelect.value} | Color: ${colorSelect.value}</p>
+            </div>
+        `;
+
+        cartItems.appendChild(cartItem);
+
+        closeModal();
+    });
+
+    window.closeModal = function () {
+        modal.style.display = "none";
+        sizeSelect.value = "";
+        colorSelect.value = "";
+    };
+
+});
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const name = this.querySelector("input[type=text]").value;
+    const email = this.querySelector("input[type=email]").value;
+    const message = this.querySelector("textarea").value;
+
+    // For demo purposes, just show a message
+    document.getElementById("formMsg").innerText = `Thanks, ${name}! Your message has been sent.`;
+
+    // Reset form
+    this.reset();
+});
+
+</script>
+
+<div id="optionModal" style="
+    display:none;
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.6);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+">
+    <div style="
+        background:white;
+        padding:30px;
+        border-radius:15px;
+        width:300px;
+        text-align:center;
+        animation: fadeUp 0.5s ease;
+    ">
+        <h3 id="modalTitle"></h3>
+
+        <p><strong>Select Size</strong></p>
+        <select id="sizeSelect" style="width:100%; padding:10px; margin-bottom:15px;">
+            <option value="">Choose size</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+        </select>
+
+        <p><strong>Select Color</strong></p>
+        <select id="colorSelect" style="width:100%; padding:10px; margin-bottom:20px;">
+            <option value="">Choose color</option>
+            <option>Black</option>
+            <option>White</option>
+            <option>Red</option>
+            <option>Blue</option>
+        </select>
+
+        <button id="addToCartBtn" style="
+            padding:10px 25px;
+            background:black;
+            color:white;
+            border:none;
+            border-radius:20px;
+            cursor:pointer;
+        ">Add to Cart</button>
+
+        <p style="margin-top:15px; cursor:pointer; color:red;" onclick="closeModal()">Cancel</p>
+    </div>
+</div>
+<section id="contact" style="padding:60px; background:#f0f0f0;">
+    <h2 style="text-align:center; margin-bottom:40px;">Contact Us</h2>
+    <div style="max-width:600px; margin:0 auto;">
+        <form id="contactForm" style="display:flex; flex-direction:column; gap:15px;">
+            <input type="text" placeholder="Your Name" required style="padding:12px; border-radius:8px; border:1px solid #ccc;">
+            <input type="email" placeholder="Your Email" required style="padding:12px; border-radius:8px; border:1px solid #ccc;">
+            <textarea placeholder="Your Message" required rows="5" style="padding:12px; border-radius:8px; border:1px solid #ccc;"></textarea>
+            <button type="submit" style="padding:15px; background:#ff6b6b; color:white; border:none; border-radius:25px; cursor:pointer;">
+                Send Message
+            </button>
+        </form>
+        <p id="formMsg" style="text-align:center; margin-top:15px; color:green;"></p>
+    </div>
+</section>
+</div>
+</body>
+</html>
